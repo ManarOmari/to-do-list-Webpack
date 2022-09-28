@@ -2,22 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
+    <meta http-equiv="Cache-control" content="no-cache">
+    <script src="https://kit.fontawesome.com/a738fb17fd.js" crossorigin="anonymous"></script>
+    <title>To do list</title>
 </head>
 <body>
-    <section id="container">
-        <h1>Today's To Do<span id="sync"><i class="bi bi-arrow-repeat"><sup></sup></i></span></h1>
-        <form action="#" class="text-input">
-            <textarea name="to-dos" id="add" placeholder=" Add to your list..." rows="1" required></textarea>
-            <button id="return" type="submit"><i class="bi bi-arrow-return-left"></i></button>
-        </form>
-        <form id = "to-dos" action="#">
-            <div id="task-list"></div>
-            <button id="clear" type="button">Clear all completed</button>
-        </form>
-    </section>
-    <script src="../dist/main.js"></script>
+    
+    <div class="mainContainer">
+        
+        <div class="list">
+            <span class="listheading">Today's To do</span>
+            <span><i class="fa-solid fa-rotate"></i></span>
+        </div>
+        
+        <div class="listinputbox">
+            <input class="listinput" type="text" placeholder="Add to your list...">
+            <span><i class="fa-sharp fa-solid fa-arrow-left-long arrow icon"></i></span>
+        </div>
+    </div>
+
+    <div class="clearAll">
+        <button class="clearallButton" type="button">Clear all completed</button>
+    </div>
+    
 </body>
 </html>
