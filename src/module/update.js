@@ -40,7 +40,7 @@ export default class Task {
     const input = document.createElement('input');
     input.setAttribute('class', 'input');
 
-    const i = document.createElement("i");
+    const i = document.createElement('i');
     i.setAttribute('class', 'bi bi-three-dots-vertical');
 
     input.value = `${task.description}`;
