@@ -21,7 +21,7 @@ class Task {
     const taskItem = document.querySelector('textarea');
     const tasks = this.task();
     tasks.push(task);
-    taskItem.value = "";
+    taskItem.value = '';
     localStorage.setItem('tasks', JSON.stringify(tasks));
     window.location.reload();
   }
@@ -155,51 +155,51 @@ menu.forEach((item) => {
   });
 });
 
-const editInput = document.querySelectorAll(".input");
+const editInput = document.querySelectorAll('.input');
 
 editInput.forEach((input) => {
-  input.addEventListener("change", (e) => {
+  input.addEventListener('change', (e) => {
     const input = e.target.parentNode.childNodes[1].value.trim();
     const { id } = e.target.parentNode;
     const tasks = Task.task();
     tasks[id - 1].description = input;
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem('tasks', JSON.stringify(tasks));
   });
 });
 
-const checked = document.querySelectorAll(".check");
+const checked = document.querySelectorAll('.check');
 
 checked.forEach((check) => {
-  check.addEventListener("change", (e) => {
+  check.addEventListener('change', (e) => {
     const tasks = Task.task();
     const { checked } = e.target;
     const { id } = e.target.parentNode;
-    const sup = document.querySelector("sup");
+    const sup = document.querySelector('sup');
 
     if (checked && tasks.length > 1) {
       tasks[id - 1].completed = true;
       const completed = tasks.filter((t) => t.completed === true);
       sup.textContent = completed.length;
-      e.target.nextSibling.style.textDecoration = "line-through";
-      localStorage.setItem("tasks", JSON.stringify(tasks));
+      e.target.nextSibling.style.textDecoration = 'line-through';
+      localStorage.setItem('tasks', JSON.stringify(tasks));
     } else if (!checked && tasks.length > 1) {
       tasks[id - 1].completed = false;
       const completed = tasks.filter((t) => t.completed === true);
       sup.textContent = completed.length;
-      e.target.nextSibling.style.textDecoration = "none";
-      localStorage.setItem("tasks", JSON.stringify(tasks));
+      e.target.nextSibling.style.textDecoration = 'none';
+      localStorage.setItem('tasks', JSON.stringify(tasks));
     } else if (checked) {
       tasks[0].completed = true;
       sup.textContent = 1;
-      e.target.nextSibling.style.textDecoration = "line-through";
-      localStorage.setItem("tasks", JSON.stringify(tasks));
+      e.target.nextSibling.style.textDecoration = 'line-through';
+      localStorage.setItem('tasks', JSON.stringify(tasks));
     } else {
       tasks[0].completed = false;
       sup.textContent = "";
-      e.target.nextSibling.style.textDecoration = "none";
-      localStorage.setItem("tasks", JSON.stringify(tasks));
+      e.target.nextSibling.style.textDecoration = 'none';
+      localStorage.setItem('tasks', JSON.stringify(tasks));
     }
   });
 });
 
-document.getElementById("clear").addEventListener("click", clear);
+document.getElementById('clear').addEventListener('click', clear);
