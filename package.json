@@ -4,7 +4,8 @@
   "description": "In this project, we built a simple HTML list of To Do tasks. This simple web page was created using webpack and served by a webpack dev server.",
   "private": true,
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "dev": "webpack serve"
   },
   "repository": {
     "type": "git",
