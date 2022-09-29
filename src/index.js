@@ -12,7 +12,7 @@ class Task {
     if (localStorage.getItem('tasks') === null) {
       tasks = [];
     } else {
-      tasks = JSON.parse(localStorage.getItem('tasks'));
+        tasks = JSON.parse(localStorage.getItem('tasks'));
     }
     return tasks;
   }
@@ -57,12 +57,16 @@ class Task {
     taskList.appendChild(div);
   }
 }
-
+// clear Fun
 const clear = (event) => {
   event.preventDefault();
   let tasks = Task.task();
   tasks = tasks.filter((t) => t.completed !== true);
+  tasks.forEach((e, i) => {
+    e.index = i + 1;
+  });
   localStorage.setItem('tasks', JSON.stringify(tasks));
+  Task.showTasks(tasks);
   window.location.reload();
 };
 
