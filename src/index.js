@@ -195,7 +195,7 @@ checked.forEach((check) => {
       localStorage.setItem('tasks', JSON.stringify(tasks));
     } else {
       tasks[0].completed = false;
-      sup.textContent = "";
+      sup.textContent = '';
       e.target.nextSibling.style.textDecoration = 'none';
       localStorage.setItem('tasks', JSON.stringify(tasks));
     }
