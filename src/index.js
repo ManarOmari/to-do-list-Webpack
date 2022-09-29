@@ -1,5 +1,4 @@
 import './style.css';
-import './mobile.css';
 import Task from './module/update.js';
 import { clear } from './module/filter.js';
 
