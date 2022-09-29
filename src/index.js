@@ -1,16 +1,16 @@
 import './style.css';
 
 const mainContainer = document.querySelector('.container');
-
+console.log(mainContainer);
 const todoTasks = [{
   description: 'wash the dishes',
   completed: true,
-  index: 0,
+  index: 1,
 },
 {
   description: 'complete to do list project',
   completed: true,
-  index: 1,
+  index: 2,
 },
 ];
 
@@ -20,6 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     output.classList.add('listitem');
     output.setAttribute('id', `${n.index}`);
     output.innerHTML = `<div><input type="checkbox"> ${n.description}</div> <span class="listitemIcon"><i class="fa-solid fa-ellipsis-vertical"></i></span>`;
-    mainContainer.appendChild(output);
+  //  mainContainer.appendChild(output);
   });
 });
