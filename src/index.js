@@ -1,74 +1,7 @@
 import './style.css';
-
-class Task {
-  constructor(description, index) {
-    this.description = description;
-    this.completed = false;
-    this.index = index;
-  }
-
-  static task() {
-    let tasks;
-    if (localStorage.getItem('tasks') === null) {
-      tasks = [];
-    } else {
-      tasks = JSON.parse(localStorage.getItem('tasks'));
-    }
-    return tasks;
-  }
-
-  static addTask(task) {
-    const taskItem = document.querySelector('textarea');
-    const tasks = this.task();
-    tasks.push(task);
-    taskItem.value = '';
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-    window.location.reload();
-  }
-
-  static showTasks(task) {
-    const taskList = document.getElementById('task-list');
-
-    const div = document.createElement('div');
-    div.setAttribute('draggable', 'true');
-    div.setAttribute('class', 'listed-task');
-    div.setAttribute('id', `${task.index}`);
-    div.setAttribute('completed', `${task.completed}`);
-
-    const check = document.createElement('input');
-    check.setAttribute('type', 'checkbox');
-    check.setAttribute('class', 'check');
-
-    const input = document.createElement('input');
-    input.setAttribute('class', 'input');
-
-    const i = document.createElement('i');
-    i.setAttribute('class', 'bi bi-three-dots-vertical');
-
-    input.value = `${task.description}`;
-    if (task.completed === true) {
-      input.style.textDecoration = 'line-through';
-      check.checked = true;
-    } else {
-      input.style.textDecoration = 'none';
-      check.checked = false;
-    }
-    div.append(check, input, i);
-    taskList.appendChild(div);
-  }
-}
-// clear Fun
-const clear = (event) => {
-  event.preventDefault();
-  let tasks = Task.task();
-  tasks = tasks.filter((t) => t.completed !== true);
-  tasks.forEach((e, i) => {
-    e.index = i + 1;
-  });
-  localStorage.setItem('tasks', JSON.stringify(tasks));
-  Task.showTasks(tasks);
-  window.location.reload();
-};
+import './mobile.css';
+import Task from './module/update.js';
+import { clear } from './module/filter.js';
 
 function showAllTasks() {
   const tasks = Task.task();
@@ -82,8 +15,8 @@ function showAllTasks() {
     Task.showTasks(task);
   });
 }
-
 document.addEventListener('DOMContentLoaded', showAllTasks());
+
 document.querySelector('.text-input').addEventListener('submit', (e) => {
   e.preventDefault();
   const tasks = Task.task();
@@ -166,7 +99,7 @@ editInput.forEach((input) => {
     const input = e.target.parentNode.childNodes[1].value.trim();
     const { id } = e.target.parentNode;
     const tasks = Task.task();
-    tasks[id - 1].description = input;
+    tasks[(id - 1)].description = input;
     localStorage.setItem('tasks', JSON.stringify(tasks));
   });
 });
@@ -181,13 +114,13 @@ checked.forEach((check) => {
     const sup = document.querySelector('sup');
 
     if (checked && tasks.length > 1) {
-      tasks[id - 1].completed = true;
+      tasks[(id - 1)].completed = true;
       const completed = tasks.filter((t) => t.completed === true);
       sup.textContent = completed.length;
       e.target.nextSibling.style.textDecoration = 'line-through';
       localStorage.setItem('tasks', JSON.stringify(tasks));
     } else if (!checked && tasks.length > 1) {
-      tasks[id - 1].completed = false;
+      tasks[(id - 1)].completed = false;
       const completed = tasks.filter((t) => t.completed === true);
       sup.textContent = completed.length;
       e.target.nextSibling.style.textDecoration = 'none';
