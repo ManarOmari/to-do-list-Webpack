@@ -1,27 +1,18 @@
 import './style.css';
 
-const mainContainer = document.querySelector('.mainContainer');
+const mainContainer = document.querySelector('.container');
 
 const todoTasks = [{
   description: 'wash the dishes',
   completed: true,
+  index: 0,
+},
+{
+  description: 'complete to do list project',
+  completed: true,
   index: 1,
 },
-{
-  description: 'complete project',
-  completed: true,
-  index: 2,
-},
-{
-  description: 'play game',
-  completed: false,
-  index: 3,
-},
-{
-  description: 'wash car',
-  completed: false,
-  index: 4,
-}];
+];
 
 document.addEventListener('DOMContentLoaded', () => {
   todoTasks.forEach((n) => {

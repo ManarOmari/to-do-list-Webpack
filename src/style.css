@@ -18,12 +18,12 @@ body {
   width: 40%;
 }
 
-.mainContainer {
+.container {
   background-color: white;
 }
 
 .list,
-.listinputbox,
+.toDoList,
 .listitem {
   display: flex;
   width: 96%;
@@ -42,9 +42,6 @@ body {
 }
 
 .clearallButton {
-  /* display: flex;
-    align-items: center;
-    justify-content: center; */
   width: 100%;
   color: grey;
   cursor: pointer;
