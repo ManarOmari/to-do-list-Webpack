@@ -1,0 +1,35 @@
+{
+  "name": "to-do-list-webpack",
+  "version": "1.0.0",
+  "description": "In this project, we built a simple HTML list of To Do tasks. This simple web page was created using webpack and served by a webpack dev server.",
+  "private": true,
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack serve",
+    "start": "webpack serve --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManarOmari/to-do-list-Webpack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ManarOmari/to-do-list-Webpack/issues"
+  },
+  "homepage": "https://github.com/ManarOmari/to-do-list-Webpack#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "sass-loader": "^13.0.2",
+    "style-loader": "^3.3.1",
+    "web": "^0.0.2",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
