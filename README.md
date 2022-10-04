@@ -8,7 +8,7 @@ GitHub
 
 ###Live Demo
 Live Demo Link
-https://manaromari.github.io/to-do-list-Webpack/dist/
+https://manaromari.github.io/ToDoListCodeReview/dist/
 
 ###Getting Started
 To get a local copy up and running follow these simple example steps.
