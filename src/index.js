@@ -14,7 +14,7 @@ function showAllTasks() {
     Task.showTasks(task);
   });
 }
-document.addEventListener('DOMContentLoaded', showAllTasks());
+ document.addEventListener('DOMContentLoaded', showAllTasks());
 
 document.querySelector('.text-input').addEventListener('submit', (e) => {
   e.preventDefault();
