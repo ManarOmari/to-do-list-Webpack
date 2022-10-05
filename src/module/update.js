@@ -9,8 +9,10 @@ export default class Task {
     let tasks;
     if (localStorage.getItem('tasks') === null) {
       tasks = [];
+      console.log(tasks);
     } else {
       tasks = JSON.parse(localStorage.getItem('tasks'));
+      console.log(tasks);
     }
     return tasks;
   }

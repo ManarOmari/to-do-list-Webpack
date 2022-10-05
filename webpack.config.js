@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
-  mode: 'development',
+  mode: 'production',
   devtool: 'inline-source-map',
   module: {
     rules: [
@@ -25,9 +25,12 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    publicPath: '/to-do-list/',
+    
   },
   optimization: {
     runtimeChunk: 'single',
+  },
+  performance: {
+    hints: false,
   },
 };
