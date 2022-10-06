@@ -44,7 +44,6 @@ test('removing an item after click Clear ', () => {
   clearItem.clear = jest.fn(() => {
     {
       document.body.innerHTML = `<div id='listContainer'><div id='1'></div><div id='2'></div></div>`;
-      const list = document.querySelectorAll('#listContainer');
       clear(`<div id='1'></div>`, {
         description: 'Task1',
         completed: true,
