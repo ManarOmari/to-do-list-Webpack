@@ -1,5 +1,5 @@
 import Task from '../module/update.js';
-import clear from '../module/filter.j';
+import clear from '../module/filter.js';
 
 jest.mock('../module/filter.js', () => jest.fn());
 
@@ -44,9 +44,9 @@ test('removing an item after click Clear ', () => {
   clearItem.clear = jest.fn(() => {
     {
       document.body.innerHTML =
-        '<div id='listContainer'><div id='1'></div><div id='2'></div></div>';
+        `<div id='listContainer'><div id='1'></div><div id='2'></div></div>`;
       const list = document.querySelectorAll('#listContainer');
-      clear('<div id='1'></div>', {
+      clear(`<div id='1'></div>`, {
         description: 'Task1',
         completed: true,
         index: 1,
