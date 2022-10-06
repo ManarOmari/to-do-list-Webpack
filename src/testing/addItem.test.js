@@ -41,7 +41,6 @@ describe('add  items', () => {
 });
 
 test('removing an item after click Clear ', () => {
-
   clearItem.clear = jest.fn(() => {
     document.body.innerHTML = '<div id="listContainer"><div id="1"></div><div id="2"></div></div>';
     clear('<div id="1"></div>', {
@@ -49,7 +48,6 @@ test('removing an item after click Clear ', () => {
       completed: true,
       index: 1,
     });
-    
     expect(task1).toEqual(task2);
   });
 });
