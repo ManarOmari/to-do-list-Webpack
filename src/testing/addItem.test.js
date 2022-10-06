@@ -43,7 +43,7 @@ describe('add  items', () => {
 test('removing an item after click Clear ', () => {
   clearItem.clear = jest.fn(() => {
     
-      document.body.innerHTML = '<div id="listContainer"><div id='1'></div><div id='2'></div></div>';
+      document.body.innerHTML = '<div id="listContainer"><div id="1"></div><div id="2"></div></div>';
       clear('<div id="1"></div>', {
         description: 'Task1',
         completed: true,
