@@ -2,11 +2,13 @@ import Task from '../module/update.js';
 import clear from '../module/filter.js';
 
 jest.mock('../module/filter.js', () => jest.fn());
+require('../module/filter');
+const clearItem = require('../module/filter');
 
-let task1 = new Task('Task1', 1);
-let task2 = new Task('Task2', 2);
-let task3 = new Task('Task3', 3);
-let task4 = new Task('Task4', 4);
+const task1 = new Task('Task1', 1);
+const task2 = new Task('Task2', 2);
+const task3 = new Task('Task3', 3);
+const task4 = new Task('Task4', 4);
 describe('add  items', () => {
   test('Add first item', () => {
     expect(Task.addTask(task1)).toEqual({
@@ -39,12 +41,9 @@ describe('add  items', () => {
 });
 
 test('removing an item after click Clear ', () => {
-  require('../module/filter');
-  const clearItem = require('../module/filter');
   clearItem.clear = jest.fn(() => {
     {
-      document.body.innerHTML =
-        `<div id='listContainer'><div id='1'></div><div id='2'></div></div>`;
+      document.body.innerHTML = `<div id='listContainer'><div id='1'></div><div id='2'></div></div>`;
       const list = document.querySelectorAll('#listContainer');
       clear(`<div id='1'></div>`, {
         description: 'Task1',
