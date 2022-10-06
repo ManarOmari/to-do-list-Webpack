@@ -11,4 +11,5 @@ export const clear = (event) => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
   Task.showTasks(tasks);
   window.location.reload();
+  return tasks;
 };

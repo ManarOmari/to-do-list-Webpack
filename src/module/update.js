@@ -16,12 +16,11 @@ export default class Task {
   }
 
   static addTask(task) {
-    const taskItem = document.querySelector('textarea');
     const tasks = this.task();
     tasks.push(task);
-    taskItem.value = '';
     localStorage.setItem('tasks', JSON.stringify(tasks));
     window.location.reload();
+    return task;
   }
 
   static showTasks(task) {
