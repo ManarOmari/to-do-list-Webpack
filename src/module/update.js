@@ -16,7 +16,6 @@ export default class Task {
   }
 
   static addTask(task) {
-    const taskItem = document.querySelector('textarea');
     const tasks = this.task();
     tasks.push(task);
     localStorage.setItem('tasks', JSON.stringify(tasks));
